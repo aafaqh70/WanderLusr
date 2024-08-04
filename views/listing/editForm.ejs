@@ -1,0 +1,50 @@
+<% layout('/layouts/boilerplate') %>
+
+    <body>
+
+        <div class="row">
+            <div class="col-8 offset-2">
+                <h1>Edit Listing Listing</h1><br><br>
+                <form method="post" action="/listings/<%= listingdetail._id %>?_method=PUT"
+                    enctype="multipart/form-data">
+                    <div class="mb-3"><label for="title" class="form-label">Title</label><input type="text"
+                            name="listing[title]" class="form-control" value=<%=listingdetail.title %>
+                        placeholder="title" />
+                    </div>
+
+                    <div class="mb-3"><label for="description" class="form-label">Description</label><textarea
+                            type="text" name="listing[description]" class="form-control"
+                            placeholder="description"><%=listingdetail.description %></textarea></div>
+
+                    <div class="mb-3">
+                        <p>Original Image</p>
+                        <img src="<%= listingdetail.image.url %>" height="150" width="250" style="object-fit: cover;" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Upload new Image</label><input type="file"
+                            name="listing[image]" class="form-control" />
+                    </div>
+
+                    <div class="row">
+                        <div class="mb-3 col-md-4"><label for="price" class="form-label">Price</label><input
+                                type="number" name="listing[price]" class="form-control" value=<%=listingdetail.price %>
+                            placeholder="price" /></div>
+
+                        <div class="mb-3 col-md-8"><label for="country" class="form-label">Country</label><input
+                                type="text" name="listing[country]" class="form-control" value=<%=listingdetail.country
+                                %>
+                            placeholder="country" /></div>
+
+                    </div>
+                    <div class="mb-3"><label for="location" class="form-label">Location</label><input type="text"
+                            name="listing[location]" class="form-control" value=<%=listingdetail.location %>
+                        placeholder="location" /></div><br><br>
+
+                    <button class="btn btn-dark edit-btn">Submit</button><br><br>
+                </form>
+            </div>
+        </div>
+    </body>
+
+    </html>
