@@ -35,7 +35,7 @@
             </div>
             <% if (currUser && currUser._id.equals(listingdetail.owner._id)) { %>
                 <div class="btns">
-                    <a href="http://localhost:8080/listings/edit/<%= listingdetail._id %>"><button
+                    <a href="/listings/edit/<%= listingdetail._id %>"><button
                             class="btn btn-dark edit-btn">Edit</button>
                     </a>
                     <form method="post" action="/listings/<%= listingdetail._id %>?_method=DELETE">
